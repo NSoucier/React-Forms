@@ -17,15 +17,17 @@ it('matches snapshot', function() {
 it('should add a box to the page', function() {
     const { container } = render(<BoxList />);
 
-    container.querySelector('input[name="backgroundColor"]').value = 'green';
-    container.querySelector('input[name="width"]').value = 100;
-    container.querySelector('input[name="height"]').value = 100;
+    const bgColor = container.querySelector('input[name="backgroundColor"]');
+    const width = container.querySelector('input[name="width"]');
+    const height = container.querySelector('input[name="height"]');
+    fireEvent.change(bgColor, { target: { value: 'green'}});
+    fireEvent.change(width, { target: { value: '100'}});
+    fireEvent.change(height, { target: { value: '100'}});
     const submit = container.querySelector('.new-box-form');
     fireEvent.submit(submit);
 
-    // the form did not submit, how to debug. Line below should say 'green'
     expect(
-        container.querySelector('div[style="background-color: salmon; width: 100px; height: 100px;"]')
+        container.querySelector('div[style="background-color: green; width: 100px; height: 100px;"]')
     ).toBeInTheDocument();
 }); 
 

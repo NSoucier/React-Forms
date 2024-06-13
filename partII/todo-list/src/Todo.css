@@ -1,0 +1,7 @@
+.remove {
+    border-radius: 20%;
+    border: 1px solid dimgray;
+    margin-left: 10px;
+    background-color: rgba(255, 0, 0, 0.741);
+    color: white;
+}
