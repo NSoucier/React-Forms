@@ -1,9 +1,15 @@
+import './Box.css'
 
-function Box({backgroundColor, width, height}) {
+function Box({backgroundColor, width, height, id, removeBox}) {
+
+    const remove = () => {
+        removeBox(id);
+    };
+
     return (
         <>
-            <div className="Box" style={{backgroundColor:`black`, width:`100px`, height:`200px`}}>
-                XXX
+            <div className="Box" style={{backgroundColor, width, height}}>
+                <button className='Remove' onClick={remove}>x</button>
             </div>
         </>
     )
