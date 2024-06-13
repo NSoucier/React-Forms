@@ -27,7 +27,7 @@ function NewBoxForm({ addbox }) {
     return (
         <div className="form">
             <h3>Design your box below!</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="new-box-form">
                 <label htmlFor="backgroundColor">Color:
                     <input 
                         id="backgroundColor"
@@ -60,7 +60,7 @@ function NewBoxForm({ addbox }) {
                         value={formData.height}
                         onChange={handleChange}/>  
                 </label>
-                <button>Add box!</button>
+                <button className="add-box">Add box!</button>
             </form>
         </div>
     )
